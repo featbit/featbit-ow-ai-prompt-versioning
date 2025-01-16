@@ -1,0 +1,68 @@
+---
+title: Real-World AI Prompt Testing Case - Logic But
+publishedAt: "2025-01-16"
+summary: Introducing a Real-World AI Prompt Testing Case, Scoring the Relevant Between a Reddit Post and a Service
+author: "RealFeatBit"
+image: "/introducing.png"
+---
+
+## The Problem
+
+[Idea-Hunt.com](https://idea-hunt.com) is a platform that enables SMBs to find the most relevant posts for their services on Reddit in real-time. This allows them to leave high-quality, problem-solving comments, driving more traffic and attracting more customers.
+
+The relevance score is determined by the questions asked by the user in Idea-Hunt. A user can write multiple questions, as shown in the example below, where questions are used to match a Reddit post with a service. These questions are referred to as "evaluation rules."
+
+![evaluation-rules-setting](/blog/real-world-ai-prompt-testing-in-scoring-strategies/evaluation-rules-setting.png)
+
+In addition to the user-defined questions, the system also includes a set of predefined rules to evaluate the relevance between a Reddit post and a service. These are referred to as "built-in evaluation rules," as illustrated below:
+
+```json
+[
+    "Does the {input.post} explicitly ask for help, and is the mentioned {input.product} a highly suitable solution for solving the problem?",
+    "Does the {input.post} describe an issue, and is the mentioned {input.product} an essential tool for resolving this issue?"
+]
+```
+
+The first scoring strategy works as follows: if any of the questions in the "evaluation rules" are answered with "Yes," the final relevance score is marked as "HIGH_RELEVANT." Only posts marked as "HIGH_RELEVANT" will trigger alerts for users.
+
+However, even when users define highly accurate evaluation rules, the system occasionally alerts users to irrelevant posts (posts that are not truly highly relevant to the user's service). To address this, the Idea-Hunt team aims to improve the accuracy of the relevance scoring by testing a second scoring strategy while retaining the same set of user-defined "evaluation rules."
+
+## Attempting a New Scoring Strategy
+
+In the first attemp prompt strategy, the evaluation process doesn't count built-in rules as part of the evaluation. The system only considers the user-defined rules. The second scoring strategy, however, will incorporate both the user-defined and built-in rules in the evaluation process.
+
+**If and only if one of the user-defined rules is marked as "HIGH_RELEVANT" and at least one of the built-in rules is marked as "HIGH_RELEVANT," the final relevance score will be marked as "HIGH_RELEVANT".**
+
+## Prompt Testing Online
+
+The second strategy is uncertain and needs to be tested. Unlike traditional computer programs, AI prompts must be evaluated in real-world scenarios using real data. This is where the Idea-Hunt team is seeking support.
+
+They need to test two strategy prompts online, meaning both in a production environment and with real user cases. If you're familiar with traditional software engineering, this is similar to A/B testing or a Canary Release, which can be managed through controlled releases using Feature Flag technology.
+
+
+Using FeatBit ([an open-source feature flag platform](https://www.featbit.co)), this can be achieved by creating a multi-variant feature flag. As shown in the image below, a two-variant feature flag represents two versions of the scoring strategy:
+
+- **V1** strategy: User-defined evaluation rules only.
+- **V2** strategy: User-defined && built-in evaluation rules.
+
+
+![featbit-ff.png](/blog/real-world-ai-prompt-testing-in-scoring-strategies/featbit-ff.png)
+
+
+At the start of prompt testing, you can set 100% of users to adopt the first strategy. Then, add an internal team to test the second strategy. As shown above, the user "hu-beau" has been added as the first tester.
+
+Once the internal team has tested the second strategy, you can assign the new strategy to some "deep-connection users." These users are more likely to provide valuable feedback and tolerate potential issues.
+
+![featbit-ff.png](/blog/real-world-ai-prompt-testing-in-scoring-strategies/loyal-users-who-build-deep-connections.png)
+
+## Code to Control Prompt Testing
+
+Below is a snippet of code that uses a feature flag to control the two different scoring strategies:
+
+![code](/blog/real-world-ai-prompt-testing-in-scoring-strategies/code.png)
+
+The code `await fbClient.stringVariation("evaluation-strategy", context, "v1")` retrieves the evaluation strategy from the feature flag. Its return value (either "v1" or "v2") is determined by the user profile context passed to the `fbClient.stringVariation` function.
+
+Whether you call it A/B testing, a canary release, or a feature flag, the key is to control the prompt testing online and evaluate the new scoring strategy’s performance in a real-world scenario.
+
+## Evaluation 
