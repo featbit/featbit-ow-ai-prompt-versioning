@@ -11,21 +11,23 @@ import {
 export const BLUR_FADE_DELAY = 0.15;
 
 export const siteConfig = {
-  name: "AI Agent SDK",
-  description: "Create AI Agents with just a few lines of code.",
+  name: "FeatBit",
+  description: "Open-source feature flag & ai prompt online versioning platform",
   cta: "Get Started",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   keywords: [
-    "AI Agent SDK",
-    "Multi-Agent Systems",
-    "Tool Integration",
-    "Workflow Automation",
+    "Open-source feature flag",
+    "Prompt Version Control",
+    "AI Prompt Version Control",
+    "Prompt Versioning",
+    "AI Prompt Versioning",
+    "AI Prompt Release",
   ],
   links: {
-    email: "support@aiagentsdk.com",
+    email: "contact@featbit.co",
     twitter: "https://twitter.com/aiagentsdk",
     discord: "https://discord.gg/aiagentsdk",
-    github: "https://github.com/aiagentsdk",
+    github: "https://github.com/featbit/featbit",
     instagram: "https://instagram.com/aiagentsdk",
   },
   hero: {
@@ -123,19 +125,28 @@ export const siteConfig = {
     socialLinks: [
       {
         icon: <Icons.github className="h-5 w-5" />,
-        url: "#",
+        url: "https://github.com/featbit/featbit",
       },
       {
-        icon: <Icons.twitter className="h-5 w-5" />,
-        url: "#",
+        icon: <Icons.linkedin className="h-5 w-5" />,
+        url: "https://www.linkedin.com/company/featbit/",
       },
+      {
+        icon: <Icons.youtube className="h-5 w-5" />,
+        url: "https://www.youtube.com/@featbit",
+      },
+      // {
+      //   icon: <Icons.twitter className="h-5 w-5" />,
+      //   url: "https://x.com/realfeatbit",
+      // },
     ],
     links: [
-      { text: "Pricing", url: "#" },
-      { text: "Contact", url: "#" },
+      { text: "Home", url: "https://featbit.co" },
+      { text: "Documentation", url: "https://docs.featbit.co/" },
+      { text: "Plan", url: "https://dashboard.featbit.co/" },
     ],
     bottomText: "All rights reserved.",
-    brandText: "AGENT SDK",
+    brandText: "FeatBit",
   },
 
   testimonials: [

@@ -23,18 +23,35 @@ export function MobileDrawer() {
       <DrawerContent>
         <DrawerHeader className="px-6">
           <Link
-            href="/"
+            href="https://www.featbit.co"
             title="brand-logo"
-            className="relative mr-6 flex items-center space-x-2"
+            className="relative flex items-center space-x-2 justify-center w-full mb-4"
           >
             <Icons.logo className="w-auto h-[40px]" />
             <DrawerTitle>{siteConfig.name}</DrawerTitle>
+          </Link>          
+          <Link
+            href="/"
+            className={cn(
+              "text-primary-foreground rounded-lg group tracking-tight font-medium",
+              "my-2 text-sm"
+            )}
+          >
+            AI Prompt Version Control
           </Link>
-          <DrawerDescription>{siteConfig.description}</DrawerDescription>
+          <Link
+            href="/blog"
+            className={cn(
+              "text-primary-foreground rounded-lg group tracking-tight font-medium",
+              "my-2 text-sm"
+            )}
+          >
+            Blog
+          </Link>
         </DrawerHeader>
         <DrawerFooter>
           <Link
-            href="#"
+            href="https://app.featbit.co"
             className={cn(
               buttonVariants({ variant: "default" }),
               "text-white rounded-full group"

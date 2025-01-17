@@ -14,11 +14,30 @@ export function Header() {
           className="relative mr-6 flex items-center space-x-2"
         >
           <Icons.logo className="w-auto" />
-          <span className="font-semibold text-lg">FeatBit</span>
+          <span className="font-semibold text-2xl">FeatBit</span>
         </Link>
         <div className="hidden lg:block">
           <Link
-            href="#"
+            href="/"
+            className={cn(
+              "text-primary-foreground rounded-lg group tracking-tight font-medium",
+              "lg:mr-10 text-sm"
+            )}
+          >
+            AI Prompt Version Control
+          </Link>
+          <Link
+            href="/blog"
+            className={cn(
+              "text-primary-foreground rounded-lg group tracking-tight font-medium",
+              "lg:mr-20 text-sm"
+            )}
+          >
+            Blog
+          </Link>
+
+          <Link
+            href="https://app.featbit.co"
             className={cn(
               buttonVariants({ variant: "default" }),
               "h-8 text-primary-foreground rounded-lg group tracking-tight font-medium"

@@ -77,13 +77,13 @@ export default async function Page(props: {
           }),
         }}
       />
-      <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6 lg:px-8 space-y-4 my-12">
+      <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6 lg:px-8 space-y-4 my-12 mb-[60px]">
         <Suspense
           fallback={
             <div className="mb-8 w-full h-64 bg-muted animate-pulse rounded-lg"></div>
           }
         >
-          {post.metadata.image && (
+          {/* {post.metadata.image && (
             <div className="mb-8">
               <Image
                 width={1920}
@@ -93,7 +93,7 @@ export default async function Page(props: {
                 className="w-full h-auto rounded-lg border"
               />
             </div>
-          )}
+          )} */}
         </Suspense>
         <div className="flex flex-col">
           <h1 className="title font-medium text-3xl tracking-tighter">
@@ -113,7 +113,7 @@ export default async function Page(props: {
           <Author
             twitterUsername={post.metadata.author}
             name={post.metadata.author}
-            image={"/author.jpg"}
+            image={"/author-hubo.jpg"}
           />
         </div>
         <article
@@ -121,6 +121,7 @@ export default async function Page(props: {
           dangerouslySetInnerHTML={{ __html: post.source }}
         ></article>
       </div>
+      <hr className="my-[60px] w-[20px] mx-auto"/>
       <CTA />
     </section>
   );

@@ -77,7 +77,7 @@ export async function GET(req: NextRequest) {
           </div>
         </div>
 
-        <img
+        {/* <img
           src={`${siteConfig.url}/cube.png`}
           width={500}
           style={{
@@ -85,7 +85,7 @@ export async function GET(req: NextRequest) {
             bottom: -100,
             aspectRatio: "auto",
           }}
-        />
+        /> */}
       </div>
     ),
     {

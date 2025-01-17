@@ -39,13 +39,13 @@ export function Testimonials() {
             >
               <div className="px-4 py-5 sm:p-6 flex-grow">
                 <div className="flex items-center gap-4 mb-4">
-                  {testimonial.image && (
+                  {/* {testimonial.image && (
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
                       className="w-12 h-12 rounded-full object-cover"
                     />
-                  )}
+                  )} */}
                   <div>
                     <h3 className="text-lg font-medium text-foreground">
                       {testimonial.name}
