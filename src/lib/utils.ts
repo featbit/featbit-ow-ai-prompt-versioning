@@ -45,7 +45,7 @@ export function constructMetadata({
       type: "website",
       locale: "en_US",
     },
-    icons: "/prompt-version-control-online/favicon.ico",
+    icons: "/prompt-version-control-online/featbitfavicon.ico",
     metadataBase: new URL(siteConfig.url),
     authors: [
       {
