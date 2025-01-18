@@ -113,7 +113,7 @@ export default async function Page(props: {
           <Author
             twitterUsername={post.metadata.author}
             name={post.metadata.author}
-            image={"/author-hubo.jpg"}
+            image={"/prompt-version-control-online/author-hubo.jpg"}
           />
         </div>
         <article

@@ -19,9 +19,7 @@ export const siteConfig = {
     "Open-source feature flag",
     "Prompt Version Control",
     "AI Prompt Version Control",
-    "Prompt Versioning",
-    "AI Prompt Versioning",
-    "AI Prompt Release",
+    "AI Prompt Versioning"
   ],
   links: {
     email: "contact@featbit.co",
