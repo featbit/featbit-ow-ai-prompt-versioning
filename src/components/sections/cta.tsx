@@ -12,7 +12,7 @@ export function CTA() {
 
         <div className="flex justify-center">
           <Button className="flex items-center gap-2" asChild>
-            <Link href="https://app.featbit.com/">Get Started</Link>
+            <Link href="https://app.featbit.co/">Get Started</Link>
           </Button>
         </div>
       </div>
